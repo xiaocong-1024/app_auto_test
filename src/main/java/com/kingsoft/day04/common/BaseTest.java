@@ -56,7 +56,7 @@ public class BaseTest {
         //appium服务的接口地址
         URL remoteUrl = null;
         try {
-            remoteUrl = new URL("http://+"+appiumIp+":"+appiumPort+"/wd/hub");
+            remoteUrl = new URL("http://"+appiumIp+":"+appiumPort+"/wd/hub");
             System.out.println("访问的appium url==>" + remoteUrl);
         } catch (MalformedURLException e) {
             e.printStackTrace();
