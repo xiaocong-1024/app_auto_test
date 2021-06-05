@@ -32,15 +32,15 @@ public class BaseTest {
     //确保在所有测试类执行之前打开app
     Logger logger = Logger.getLogger(BaseTest.class);
     @BeforeTest
-    @Parameters({"udid","appium_port","uiautomator2_port"})
-    public void setUpTest(String udid,String appiumPort,String uiautomator2Port){
+    @Parameters({"udid","appium_ip","appium_port","uiautomator2_port"})
+    public void setUpTest(String udid,String appiumIp, String appiumPort,String uiautomator2Port){
         //(1)打开被测app
         logger.info("====================打开测试app=========================");
-        openApp(udid,appiumPort,uiautomator2Port);
+        openApp(udid,appiumPort,appiumIp,uiautomator2Port);
     }
 
     //打开测试app
-    public void openApp(String udid,String appiumPort,String uiautomator2Port){
+    public void openApp(String udid,String appiumPort,String appiumIp,String uiautomator2Port){
         //打开测试app
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
@@ -55,7 +55,7 @@ public class BaseTest {
         //appium服务的接口地址
         URL remoteUrl = null;
         try {
-            remoteUrl = new URL("http://localhost:"+appiumPort+"/wd/hub");
+            remoteUrl = new URL("http://+"+appiumIp+":"+appiumPort+"/wd/hub");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
