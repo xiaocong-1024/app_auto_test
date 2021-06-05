@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="测试套件" parallel="tests" thread-count="2">
+<suite name="测试套件" parallel="tests" thread-count="1">
     <listeners>
         <listener class-name="com.kingsoft.day04.listener.TestFailListener"/>
 <!--        <listener class-name="com.kingsoft.day04.listener.TestFailRetryListener"/>-->
     </listeners>
-    <test name="模拟器">
-        <!--udid：设备的唯一标识符-->
-        <parameter name="udid" value="127.0.0.1:62001"/>
-        <!--appium_port:appium服务端用来监听测试脚本的端口号(appium服务的启动端口)-->
-        <parameter name="appium_port" value="4723"/>
-        <!--uiautomator2_port:appium服务端用来转发指令给设备的端口号(手机端监听的appium服务端口号)-->
-        <parameter name="uiautomator2_port" value="8200"/>
-        <classes>
-            <class name="com.kingsoft.day04.testcases.LoginTest"/>
-            <class name="com.kingsoft.day04.testcases.TikuTest"/>
-        </classes>
-    </test>
+<!--    <test name="模拟器">-->
+<!--        &lt;!&ndash;udid：设备的唯一标识符&ndash;&gt;-->
+<!--        <parameter name="udid" value="127.0.0.1:62001"/>-->
+<!--        &lt;!&ndash;appium_port:appium服务端用来监听测试脚本的端口号(appium服务的启动端口)&ndash;&gt;-->
+<!--        <parameter name="appium_port" value="4723"/>-->
+<!--        &lt;!&ndash;uiautomator2_port:appium服务端用来转发指令给设备的端口号(手机端监听的appium服务端口号)&ndash;&gt;-->
+<!--        <parameter name="uiautomator2_port" value="8200"/>-->
+<!--        <classes>-->
+<!--            <class name="com.kingsoft.day04.testcases.LoginTest"/>-->
+<!--            <class name="com.kingsoft.day04.testcases.TikuTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
     <test name="android真机">
         <parameter name="udid" value="5ENDU19929018513"/>
         <parameter name="appium_port" value="4725"/>
