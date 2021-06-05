@@ -36,6 +36,7 @@ public class BaseTest {
     public void setUpTest(String udid,String appiumIp, String appiumPort,String uiautomator2Port){
         //(1)打开被测app
         logger.info("====================打开测试app=========================");
+        System.out.println("appium_ip:"+appiumIp+" | appium_port:" + appiumPort);
         openApp(udid,appiumPort,appiumIp,uiautomator2Port);
     }
 
@@ -56,6 +57,7 @@ public class BaseTest {
         URL remoteUrl = null;
         try {
             remoteUrl = new URL("http://+"+appiumIp+":"+appiumPort+"/wd/hub");
+            System.out.println("访问的appium url==>" + remoteUrl);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
